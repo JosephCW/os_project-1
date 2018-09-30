@@ -1,0 +1,15 @@
+language: c
+
+before_install:
+        - sudo apt-get install -qq valgrind
+
+script:
+        - make test
+        - ./test 
+        - valgrind ./test init 2>& 1 |grep -q "possible"
+        - valgrind ./test add 2>& 1 |grep -q "possible"
+        - valgrind ./test rm 2>& 1 |grep -q "possible"
+        - valgrind ./test rm_err 2>& 1 |grep -q "possible"
+        - valgrind ./test set 2>& 1 |grep -q "possible"
+        - valgrind ./test set_err 2>& 1 |grep -q "possible"
+
