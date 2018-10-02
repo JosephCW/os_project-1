@@ -45,6 +45,10 @@ void vcleanup(vector * v) {
 //	free(&((*v).maxCapacity));
 //	free(&((*v).numElements));
 //	free(v);
+	free((*v).data);
+	(*v).maxCapacity = 0;
+	(*v).numElements = 0;
+	v = NULL;
 }
 
 int vget(vector v, int idx, int * result) {
