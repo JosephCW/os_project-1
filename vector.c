@@ -1,20 +1,24 @@
+// Joseph Watts
+// Eloe 44550-01-f18
+// project-1-JosephCW
+
 #include "vector.h"
 
+// Initialize our vector 
 void vinit(vector * v) {
 	(*v).data = malloc(2 * sizeof(int));
 	(*v).maxCapacity = 2;
 	(*v).numElements = 0;
 }
 
+// Add a value to our vector
 int vadd(vector * v, int value) {
 	// if it is full, double the size of the collection
 	if ((*v).maxCapacity == (*v).numElements) {
-		//int * tmpData = malloc(2 * (*v).maxCapacity * sizeof(int));
 		(*v).data = realloc((*v).data, 2 * (*v).maxCapacity * sizeof(int));
 		// Increase the maxCapacity variable
 		(*v).maxCapacity *= 2;
 	}
-
 	// Set the last value to be the newly inserted value.
 	(*v).data[(*v).numElements] = value;
 	// increase the number of taken elements by 1.
@@ -36,7 +40,11 @@ int vrm(vector * v, int idx) {
 }
 
 void vcleanup(vector * v) {
-
+	// I think free(v) is all you need but not sure
+//	free((*v).data);
+//	free(&((*v).maxCapacity));
+//	free(&((*v).numElements));
+//	free(v);
 }
 
 int vget(vector v, int idx, int * result) {
