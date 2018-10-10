@@ -15,6 +15,16 @@ void vinit(vector * v) {
 
 // Add a value to our vector
 int vadd(vector * v, int value) {
+	// if it is full, double the size of the collection
+	if ((*v).maxCapacity == (*v).numElements) {
+		(*v).data = realloc((*v).data, 2 * (*v).maxCapacity * sizeof(int));
+		// Increase the maxCapacity variable
+		(*v).maxCapacity *= 2;
+	}
+	// Set the last value to be the newly inserted value.
+	(*v).data[(*v).numElements] = value;
+	// increase the number of taken elements by 1.
+	(*v).numElements += 1;
 	return 1;
 }
 
