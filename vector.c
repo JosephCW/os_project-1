@@ -18,6 +18,9 @@ int vadd(vector * v, int value) {
 	// if it is full, double the size of the collection
 	if ((*v).maxCapacity == (*v).numElements) {
 		(*v).data = realloc((*v).data, 2 * (*v).maxCapacity * sizeof(int));
+		if (!(*v).data) {
+			return 0;
+		}
 		// Increase the maxCapacity variable
 		(*v).maxCapacity *= 2;
 	}
