@@ -1,3 +1,8 @@
+// Joseph Watts
+// 10/9/18
+// N.Eloe
+// OS Project 1
+
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -1,6 +1,8 @@
 // Joseph Watts
+// 10/9/18
 // Eloe 44550-01-f18
 // project-1-JosephCW
+
 
 #include "vector.h"
 
