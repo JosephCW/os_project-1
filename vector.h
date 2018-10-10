@@ -1,3 +1,6 @@
+#ifndef VECTOR_H
+#define VECTOR_H
+
 // Joseph Watts
 // 10/9/18
 // N.Eloe
@@ -21,4 +24,4 @@ int vset(vector v, int idx, int value);
 int vsize(vector v);
 int vcapacity(vector v);
 
-
+ENDIF // VECTOR_H
