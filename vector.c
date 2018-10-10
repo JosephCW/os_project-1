@@ -57,7 +57,7 @@ int vget(vector v, int idx, int * result) {
 	// If index is allowed set value of reslt paramater
 	// to be the value at the index and return 1.
 	// otherwise return 0.
-	if (idx >= v.numElements) {
+	if (idx >= v.numElements || idx < 0) {
 		return 0;
 	}
 	*result = v.data[idx];
