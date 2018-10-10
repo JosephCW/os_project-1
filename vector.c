@@ -45,11 +45,6 @@ int vrm(vector * v, int idx) {
 }
 
 void vcleanup(vector * v) {
-	// I think free(v) is all you need but not sure
-//	free((*v).data);
-//	free(&((*v).maxCapacity));
-//	free(&((*v).numElements));
-//	free(v);
 	free((*v).data);
 	(*v).maxCapacity = 0;
 	(*v).numElements = 0;
