@@ -29,10 +29,24 @@ int vadd(vector * v, int value) {
 }
 
 int vrm(vector * v, int idx) {
-	return 1;
+	// If the index is too high return 0.
+	if (idx >= (*v).numElements) {
+		return 0;
+	}
+	// Remove value at specified index by shifting values down
+	for (int i = idx; i < (*v).numElements - 1; i++) {
+		(*v).data[i] = (*v).data[i+1];
+	}
+	// decrement the current number of held values
+	(*v).numElements -= 1;
 }
 
 void vcleanup(vector * v) {
+	// I think free(v) is all you need but not sure
+//	free((*v).data);
+//	free(&((*v).maxCapacity));
+//	free(&((*v).numElements));
+//	free(v);
 	free((*v).data);
 	(*v).maxCapacity = 0;
 	(*v).numElements = 0;
