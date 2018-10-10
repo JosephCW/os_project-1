@@ -65,7 +65,11 @@ int vget(vector v, int idx, int * result) {
 }
 
 int vset(vector v, int idx, int value) {
-	return 1;
+	// If the index is too large, return 0
+	if (idx >= v.numElements) {
+		return 0;
+	}
+	v.data[idx] = value;
 }
 
 int vsize(vector v) {
